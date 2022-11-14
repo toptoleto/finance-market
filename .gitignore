@@ -1,0 +1,48 @@
+target
+.mvn/wrapper/maven-wrapper.jar
+
+# embedded postgres working directory
+pg-embedded
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+.DS_Store
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/pg-data
+/config/docker/nginx/cache
+/config/docker/nginx/nginx-pid
+/config/docker/keycloak
+### Visual Studio Code ###
+.vscode
+
+#Log
+logfile
+audit.log
+performance.log
+
+#testing
+/testing/tenants/*.log.txt
+
+#maven
+settings-local.xml
+/nginx/build/
+/nginx/node_modules/
