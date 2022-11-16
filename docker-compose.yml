@@ -1,0 +1,16 @@
+version: "3.0"
+
+services:
+  db:
+    image: postgres:12.2
+    volumes:
+      - ./postgres/src/main/resources/db/01_create_roles.sql:/docker-entrypoint-initdb.d/01.sql:ro
+      #  Создание БД не нужно поэтому 02_create_db.sql пропущен
+      - ./postgres/src/main/resources/db/03_create_schemas.sql:/docker-entrypoint-initdb.d/03.sql:ro
+      - ./postgres/src/main/resources/db/04_create_extensions.sql:/docker-entrypoint-initdb.d/04.sql:ro
+      - ./postgres/src/main/resources/db/05_create_kibana_users.sql:/docker-entrypoint-initdb.d/05.sql:ro
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: finance_market
